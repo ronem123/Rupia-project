@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-auth-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-consumer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-customer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-discovery-server" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-front-end" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-kafa-event" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-transaction-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-wallet-service" vcs="Git" />
+  </component>
+</project>
