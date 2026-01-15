@@ -61,11 +61,17 @@ ___
 * Clone each microservice into single empty project folder
 * Add each microservice as a maven module into the parent project
 
+```
+Note: Each microservice is included as a Git submodule.Due to known limitations with submodule pulls, it is recommended 
+to clone each microservice repository separately and then include them in the parent project folder. This ensures a stable setup.
+The submodule pull issues are expected to be resolved in future Git updates.`
+```
+
 ## Environment configuration
 
 ___
 
-* Create .env file and add these secrete name and link this .env file into the configuration file
+* Create `.env` file and add these secrete name and link this `.env` file into the configuration file
 
 ```
   RUPIA_JWT_SECRET_ACCESS=aLYzytRNfvsP+OvcR3AsR2KwR6j9CsLci6L7AuRNv4k=
