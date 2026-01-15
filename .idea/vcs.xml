@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-admin-service" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia-auth-service" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia-consumer" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia-customer" vcs="Git" />

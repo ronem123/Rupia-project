@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/rupia-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/rupia-transaction-service/pom.xml" />
         <option value="$PROJECT_DIR$/rupia-wallet-service/pom.xml" />
+        <option value="$PROJECT_DIR$/rupia-admin-service/pom.xml" />
       </list>
     </option>
   </component>
