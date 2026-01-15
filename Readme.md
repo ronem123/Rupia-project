@@ -16,6 +16,7 @@ Each microservice is maintained as an independent Git repository and aggregated 
 | [rupia-discovery-server](https://github.com/ronem123/rupia-discovery-server)       | Microservice - Service discovery (Eureka)         |
 | [rupia-gateway](https://github.com/ronem123/rupia-gateway)                         | Microservice - API Gateway                        |
 | [rupia-consumer](https://github.com/ronem123/rupia-consumer)                       | Microservice - Kafka consumer / async processing  |
+| [rupia-admin-service](https://github.com/ronem123/rupia-admin-service)             | Microservice - Super Admin and Admin activities   |
 
 # Architecture Overview
 
