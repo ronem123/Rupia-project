@@ -6,17 +6,17 @@ Each microservice is maintained as an independent Git repository and aggregated 
 
 ### Microservices & Shared Modules
 
-| Name                                                                               | Remarks                                           |
-|------------------------------------------------------------------------------------|---------------------------------------------------|
-| [rupia-kafka-event](https://github.com/ronem123/rupia-kafka-event)                 | Shared module - (Kotlin, events)                  |
-| [rupia-auth-service](https://github.com/ronem123/rupia-auth-service)               | Microservice - Authentication & Authorization     |
-| [rupia-wallet-service](https://github.com/ronem123/rupia-wallet-service)           | Microservice - Wallet & balance management        |
-| [rupia-transaction-service](https://github.com/ronem123/rupia-transaction-service) | Microservice - Transactions & ledger              |
-| [rupia-customer-service](https://github.com/ronem123/rupia-customer-service)       | Microservice - Customer profile & eKYC management |
-| [rupia-discovery-server](https://github.com/ronem123/rupia-discovery-server)       | Microservice - Service discovery (Eureka)         |
-| [rupia-gateway](https://github.com/ronem123/rupia-gateway)                         | Microservice - API Gateway                        |
-| [rupia-consumer](https://github.com/ronem123/rupia-consumer)                       | Microservice - Kafka consumer / async processing  |
-| [rupia-admin-service](https://github.com/ronem123/rupia-admin-service)             | Microservice - Super Admin and Admin activities   |
+| Name                                                                               | PORT | Remarks                                            |
+|------------------------------------------------------------------------------------|------|----------------------------------------------------|
+| [rupia-discovery-server](https://github.com/ronem123/rupia-discovery-server)       | 8762 | Microservice - Service  discovery (Eureka)         |
+| [rupia-gateway](https://github.com/ronem123/rupia-gateway)                         | 8090 | Microservice - API Gateway                         |
+| [rupia-admin-service](https://github.com/ronem123/rupia-admin-service)             | 8091 | Microservice - Super Admin and   Admin activities  |
+| [rupia-auth-service](https://github.com/ronem123/rupia-auth-service)               | 8092 | Microservice - Authentication &     Authorization  |
+| [rupia-customer-service](https://github.com/ronem123/rupia-customer-service)       | 8093 | Microservice - Customer profile &  eKYC management |
+| [rupia-wallet-service](https://github.com/ronem123/rupia-wallet-service)           | 8094 | Microservice - Wallet & balance   management       |
+| [rupia-transaction-service](https://github.com/ronem123/rupia-transaction-service) | 8095 | Microservice - Transactions &    ledger            |
+| [rupia-consumer](https://github.com/ronem123/rupia-consumer)                       | 0    | Microservice - Kafka consumer / async processing   |
+| [rupia-kafka-event](https://github.com/ronem123/rupia-kafka-event)                 | 0    | Shared module - (Kotlin,  events)                  |
 
 # Architecture Overview
 
@@ -87,3 +87,25 @@ ___
 * No shared database between services
 * Communication via REST + Kafka events
 * Designed for fintech-grade scalability and security
+
+# DOCKER NOTES
+```
+Docker setup and configuration
+1. Build an app with
+    1. mvn clean package -DskipTests
+2. Create DockerFile
+3. Create network where each microservice docker containers communicate
+    1. docker network create rupia-network
+    2. Check if all is fine: docker network ls
+4. Build docker image
+    1. docker build -t service_name: latest .
+5. Create a container and run it on the created network
+    1. docker run -d —name container_name —network rupia-network -p hostport:containerport image_name:latest
+6. Check if docker container is up and running
+    1. docker ps -a
+    2. You will get the container id with the image running
+7. Check the Docker logs
+    1. docker logs container_id
+8. Note: if the container is already present, you can remove it
+    1. docker rm container_name
+```
