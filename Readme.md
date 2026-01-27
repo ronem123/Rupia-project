@@ -108,4 +108,6 @@ Docker setup and configuration
     1. docker logs container_id
 8. Note: if the container is already present, you can remove it
     1. docker rm container_name
+9. If you want to run existing container do this
+    1. docker start container_name
 ```

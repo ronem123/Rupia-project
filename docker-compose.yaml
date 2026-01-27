@@ -1,0 +1,102 @@
+#
+# This is similar to this command, we configure this so we no need to write this command to run
+# docker run -d --name rupia-auth-service --network rupia-network -p 8092:8092 rupia-auth-service:latest
+#
+services:
+  # Eureka Discovery server: run the discovery server microservice with below attributes
+  rupia-discovery-server:
+    image: rupia-discovery-server:latest
+    container_name: rupia-discovery-server
+    ports:
+      - "8762:8762"
+    networks:
+      - rupia-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  # Api Gateway: runs the rupia-gateway
+  rupia-gateway:
+    image: rupia-gateway:latest
+    container_name: rupia-gateway
+    ports:
+      - "8090:8090"
+    depends_on:
+      - rupia-discovery-server
+    networks:
+      - rupia-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  # Auth-service: runs the rupia-auth-service
+  rupia-auth-service:
+    image: rupia-auth-service:latest
+    container_name: rupia-auth-service
+    ports:
+      - "8092:8092"
+    depends_on:
+      - rupia-discovery-server
+    networks:
+      - rupia-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  # Admin/Super admin: runs the rupia-admin-service
+  rupia-admin-service:
+    image: rupia-admin-service:latest
+    container_name: rupia-admin-service
+    ports:
+      - "8091:8091"
+    depends_on:
+      - rupia-discovery-server
+      - rupia-auth-service
+    networks:
+      - rupia-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  # Customer: runs the rupia-customer
+  rupia-customer:
+    image: rupia-customer:latest
+    container_name: rupia-customer
+    ports:
+      - "8093:8093"
+    depends_on:
+      - rupia-discovery-server
+      - rupia-auth-service
+    networks:
+      - rupia-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  # Wallet: runs the rupia-wallet-service
+  rupia-wallet-service:
+    image: rupia-wallet-service:latest
+    container_name: rupia-wallet-service
+    ports:
+      - "8094:8094"
+    depends_on:
+      - rupia-discovery-server
+      - rupia-auth-service
+    networks:
+      - rupia-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  # Transaction: runs the rupia-transaction-service
+  rupia-transaction-service:
+    image: rupia-transaction-service:latest
+    container_name: rupia-transaction-service
+    ports:
+      - "8095:8095"
+    depends_on:
+      - rupia-discovery-server
+      - rupia-auth-service
+    networks:
+      - rupia-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+networks:
+  rupia-network:
+    driver: bridge
+
