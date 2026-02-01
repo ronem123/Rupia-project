@@ -12,16 +12,6 @@
         <module name="rupia-discovery-server" />
         <module name="rupia-wallet-service" />
       </profile>
-      <profile name="Annotation profile for rupia-gateway" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
-        </processorPath>
-        <module name="rupia-admin-service" />
-        <module name="rupia-transaction-service" />
-      </profile>
       <profile name="Annotation profile for rupia-customer" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -33,6 +23,16 @@
         <module name="rupia-auth-service" />
         <module name="rupia" />
         <module name="rupia-customer" />
+      </profile>
+      <profile name="Annotation profile for rupia-admin-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="rupia-admin-service" />
+        <module name="rupia-transaction-service" />
       </profile>
     </annotationProcessing>
   </component>
