@@ -17,6 +17,7 @@ Each microservice is maintained as an independent Git repository and aggregated 
 | [rupia-transaction-service](https://github.com/ronem123/rupia-transaction-service) | 8095 | Microservice - Transactions &    ledger            |
 | [rupia-consumer](https://github.com/ronem123/rupia-consumer)                       | 0    | Microservice - Kafka consumer / async processing   |
 | [rupia-kafka-event](https://github.com/ronem123/rupia-kafka-event)                 | 0    | Shared module - (Kotlin,  events)                  |
+| [rupia-security-lib](https://github.com/ronem123/rupia-security-lib)               | 0    | Shared module for security pupose                  |
 
 # Architecture Overview
 
@@ -89,6 +90,7 @@ ___
 * Designed for fintech-grade scalability and security
 
 # DOCKER NOTES
+
 ```
 Docker setup and configuration
 1. Build an app with

@@ -11,6 +11,7 @@
     <mapping directory="$PROJECT_DIR$/rupia-front-end" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia-gateway" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia-kafa-event" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rupia-security-lib" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia-transaction-service" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rupia-wallet-service" vcs="Git" />
   </component>

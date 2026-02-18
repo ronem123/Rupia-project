@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Rupia-Project.iml" filepath="$PROJECT_DIR$/Rupia-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rupia/rupia.iml" filepath="$PROJECT_DIR$/rupia/rupia.iml" />
     </modules>
   </component>
 </project>
